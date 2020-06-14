@@ -163,6 +163,7 @@
 <script>
 
 function reload() {
+  //alert("reload");
   window.location.reload();
   //$(".abc").load("<?=$get_url?>");
   //window.open("<?=$get_url?>", "PopupWin", "width=500,height=600");

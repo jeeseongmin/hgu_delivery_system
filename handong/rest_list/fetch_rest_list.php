@@ -255,8 +255,8 @@ table.type08 td {
 }
 .restList .paging a:hover, .restList .paging a:focus, .restList .paging .current{
 	color:#fff;
-	border:1px solid #f40;
-	background-color:#f40;
+	border:1px solid #007bff;
+	background-color:#007bff;
 }
 
 .datail {

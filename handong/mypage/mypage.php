@@ -23,7 +23,10 @@
     LEFT JOIN restaurant_info AS I ON N.rest_id=I.rest_id
     WHERE R.user_id='$id'
     ORDER BY R.ord_date DESC";
+  $sql2 = "SELECT ord_count FROM user WHERE user_id='$id'";
+
   $result = mysqli_query($conn, $sql);
+  $result2 = mysqli_query($conn, $sql2);
 
 ?>
 
@@ -142,7 +145,10 @@
     <div class="name">이름: <?=$_SESSION["myName"]?>&nbsp;</div>
     <div class="email">이메일: <?=$_SESSION["myEmail"]?></div>
     <div class="total">주문 횟수: <?=$_SESSION["myOrdCnt"]?></div> -->
-
+<?php
+  $results = mysqli_fetch_assoc($result2);
+  $count = $results["ord_count"];
+?>
     <table cellpadding="2" style="width:auto">
       <tr>
         <td>이름:</td>
@@ -154,7 +160,7 @@
       </tr>
       <tr>
         <td>주문 횟수:</td>
-        <td><?=$_SESSION["myOrdCnt"]?></td>
+        <td><?=$count?></td>
       </tr>
     </table>
   </div>

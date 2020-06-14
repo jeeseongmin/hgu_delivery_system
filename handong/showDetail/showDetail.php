@@ -79,15 +79,14 @@ table.type08 td {
 </html>
 
 
-    <h4><i class="fas fa-edit"></i>&nbsp;&nbsp;식당 세부사항 보기</h4>
     <hr/>
 		  <div class="listWrapper">
 				<div class="table_responsive">
 				  <table class="type08">
-						<h3> 식당 세부사항 </h3>
+						<h4><i class="fas fa-edit"></i>&nbsp;&nbsp;식당 세부사항 보기</h4>
 					  <thead class="thead_light">
 							<tr class="itemList List" style="color:white">
-					      <th>카테고리 번호&nbsp;</th>
+					      <th>카테고리&nbsp;</th>
 							  <th>최근 주문 횟수&nbsp;</th>
 							  <th>한동 제휴 샵&nbsp;</th>
 							  <th>평균 별점&nbsp;</th>
@@ -95,14 +94,14 @@ table.type08 td {
 						</thead>
 				  	<tbody>
 <?php
-  $sql = "SELECT * FROM restaurant_info where rest_id = $id";
+  $sql = "SELECT * FROM restaurant_info natural join category where rest_id = $id";
 	//echo $sql; //디버깅 모드일 때, sql문 출력
 
 	$result = mysqli_query($conn,$sql);
 	if($item = $result->fetch_assoc()){
 ?>
 		          <tr>
-							  <td><?=$item['category_id']?></td>
+							  <td><?=$item['category_name']?></td>
 							  <td><?=$item['recent_ordCnt']?></td>
 								<td><?php if(empty($row['hgu_alli'])) echo "X"; else echo $row["hgu"]; ?></td>
 								<td><?=$item['avg_star']?></td>

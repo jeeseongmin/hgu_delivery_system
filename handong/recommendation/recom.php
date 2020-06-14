@@ -6,6 +6,7 @@
     <script type="text/javascript" src="./recommendation/recom.js"></script>
     <title>recommendation</title>
     <?php
+    session_start();
 
     $edit_url = $curpath."showDetail/showDetail.php?id=";
     $order_url = $curpath."showDetail/orderItem.php?id=";
@@ -65,9 +66,7 @@
        text-align: center;
     }
 
-      .tab_wrap {
-        text-align: center;
-      }
+
       .tab_menu{
         overflow: hidden;
         margin-bottom: 20px;
@@ -86,12 +85,12 @@
         transition: 0.3s all;
       }
       .btn:hover {
-        color: #df0000;
+        color: #007bff;
       }
       .btn.on {
-        border-bottom: 2px solid #df0000;
+        border-bottom: 2px solid #007bff;
         font-weight: bold;
-        color: #df0000;
+        color: #007bff;
       }
 
       .tab_box {
@@ -126,6 +125,9 @@
         display : none;
         color : red;
       }
+      .title {
+        text-align: center;
+      }
 
 
     </style>
@@ -152,7 +154,9 @@
       </div>
       <div class="tab_box_container">
         <div class="tab_box1 tab_box on">
-          <h3>평점이 4.9점 이상이고, 최근 주문수가 1000이 넘는 음식점</h3><br>
+          <div class="title">
+            <h3>평점이 4.9점 이상이고, 최근 주문수가 1000이 넘는 음식점</h3><br>
+          </div>
           <table class="type08">
             <tr class="itemList_List">
               <thead class="thead_light">
@@ -189,7 +193,10 @@
           </table>
         </div>
         <div class="tab_box2 tab_box">
-          <h3>한동대학교 제휴 할인 음식점</h3><br>
+          <div class="title">
+            <h3>한동대학교 제휴 할인 음식점</h3><br>
+          </div>
+
           <table class="type08">
             <tr class="itemList_List">
               <thead class="thead_light">            <th>순서</th>
@@ -226,7 +233,10 @@
         </div>
 
         <div class="tab_box3 tab_box">
-          <h3>이용자가 가장 많이 시켜먹은 음식점 Top5</h3><br>
+          <div class="title">
+            <h3>이용자가 가장 많이 시켜먹은 음식점 Top5</h3><br>
+          </div>
+
           <table class="type08">
             <tr class="itemList_List">
               <thead class="thead_light">
@@ -260,7 +270,10 @@
         </div>
 
         <div class="tab_box4 tab_box">
-          <h3>최소 주문 금액 20000원 이하인 식당</h3><br>
+          <div class="title">
+            <h3>최소 주문 금액 20000원 이하인 식당</h3><br>
+          </div>
+
           <table class="type08">
             <tr class="itemList_List">
               <thead class="thead_light">

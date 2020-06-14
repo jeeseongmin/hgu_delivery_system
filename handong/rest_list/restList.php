@@ -2,7 +2,7 @@
   define('__ROOT__', dirname(dirname(__FILE__)));
   //require_once(__ROOT__.'/inc/top.php');
   //require_once(__ROOT__.'/inc/functions.php');
-
+  $register_url = $curpath."login/registerCheck.php";
   $list_url = $curpath."rest_list/fetch_rest_list.php";
 ?>
 <!-- 검색 항목 :  가게명, 카테고리명, -->
